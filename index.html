@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekanat Meedech | Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Ekanat Meedech — Full Stack Developer & IoT Engineer. Specialized in Python, FastAPI, real-time systems, and IoT integration.">
+    <meta name="keywords" content="Full Stack Developer, Portfolio, Python, FastAPI, IoT, Software Engineer, Ekanat Meedech">
+    <meta name="author" content="Ekanat Meedech">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader">
+            <div class="loader-code">
+                <span class="loader-bracket">{</span>
+                <span class="loader-text">loading</span>
+                <span class="loader-dots">...</span>
+                <span class="loader-bracket">}</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">EM</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <span class="badge-dot"></span>
+                <span>Available for Work</span>
+            </div>
+            <h1 class="hero-name reveal-up">
+                <span class="hero-greeting">Hello, I'm</span>
+                <span class="hero-title-name">
+                    <span class="name-letter" style="--i:0">E</span><span class="name-letter" style="--i:1">K</span><span class="name-letter" style="--i:2">A</span><span class="name-letter" style="--i:3">N</span><span class="name-letter" style="--i:4">A</span><span class="name-letter" style="--i:5">T</span>
+                    <span class="name-space">&nbsp;</span>
+                    <span class="name-letter" style="--i:6">M</span><span class="name-letter" style="--i:7">E</span><span class="name-letter" style="--i:8">E</span><span class="name-letter" style="--i:9">D</span><span class="name-letter" style="--i:10">E</span><span class="name-letter" style="--i:11">C</span><span class="name-letter" style="--i:12">H</span>
+                </span>
+            </h1>
+            <div class="hero-role reveal-up">
+                <span class="role-prefix">&gt;&gt;&gt; </span>
+                <span class="typewriter" id="typewriter"></span>
+                <span class="typewriter-cursor">|</span>
+            </div>
+            <p class="hero-description reveal-up">
+                Crafting robust backend systems & IoT solutions with passion
+            </p>
+            <div class="hero-cta reveal-up">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Get in Touch</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#experience" class="btn btn-outline">
+                    <span>View My Work</span>
+                    <i class="fas fa-code"></i>
+                </a>
+            </div>
+            <div class="hero-stats reveal-up">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Coding</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Projects Done</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3.95">0</span>
+                    <span class="stat-label">GPA</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-wrapper reveal-scale">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image-border"></div>
+                <img src="assets/profile.jpg" alt="Ekanat Meedech" class="hero-image" id="hero-image">
+                <div class="hero-image-overlay"></div>
+            </div>
+            <div class="floating-badge badge-python reveal-float" style="--delay: 0.2s">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+            </div>
+            <div class="floating-badge badge-api reveal-float" style="--delay: 0.5s">
+                <i class="fas fa-bolt"></i>
+                <span>FastAPI</span>
+            </div>
+            <div class="floating-badge badge-iot reveal-float" style="--delay: 0.8s">
+                <i class="fas fa-microchip"></i>
+                <span>IoT</span>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal-left">
+                    <div class="about-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">about_me.py</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-indent"></span><span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-indent2"></span><span class="code-param">self</span>.<span class="code-attr">name</span> = <span class="code-string">"Ekanat Meedech"</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-indent2"></span><span class="code-param">self</span>.<span class="code-attr">role</span> = <span class="code-string">"Full Stack Developer"</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-indent2"></span><span class="code-param">self</span>.<span class="code-attr">university</span> = <span class="code-string">"KMITL"</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-indent2"></span><span class="code-param">self</span>.<span class="code-attr">passion</span> = [
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">7</span>
+                                <span class="code-indent3"></span><span class="code-string">"Backend Systems"</span>,
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">8</span>
+                                <span class="code-indent3"></span><span class="code-string">"IoT Integration"</span>,
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">9</span>
+                                <span class="code-indent3"></span><span class="code-string">"Real-time Systems"</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">10</span>
+                                <span class="code-indent2"></span>]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-description reveal-right">
+                    <p class="about-paragraph">
+                        A dedicated <span class="highlight">Full Stack Developer</span> and Computer Science student at <span class="highlight">KMITL</span> with proven freelance experience in designing and building end-to-end software solutions.
+                    </p>
+                    <p class="about-paragraph">
+                        With a solid background in developing business management systems (POS) and complex data dashboards, I possess a strong foundation in <span class="highlight">system architecture</span> and <span class="highlight">database management</span>.
+                    </p>
+                    <p class="about-paragraph">
+                        While my current core expertise lies in <span class="highlight">Python (FastAPI)</span> and real-time systems, I am highly adaptable, a fast learner, and fully prepared to transition into new tech stacks like Vue.js, Go, and NestJS.
+                    </p>
+                    <p class="about-paragraph">
+                        I am eager to apply my analytical mindset to tackle complex <span class="highlight">supply chain</span> and <span class="highlight">warehouse management</span> projects.
+                    </p>
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bangkok, Thailand</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>KMITL — CS</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Freelance Developer</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-language"></i>
+                            <span>Thai / English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/about&gt;</span>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;education&gt;</span>
+                <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line">
+                    <div class="timeline-line-fill" id="timeline-fill"></div>
+                </div>
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <span class="timeline-date">
+                                <i class="far fa-calendar-alt"></i>
+                                2025 — Present
+                            </span>
+                            <span class="timeline-status active">Currently Enrolled</span>
+                        </div>
+                        <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
+                        <h4 class="timeline-institution">
+                            <i class="fas fa-building-columns"></i>
+                            King Mongkut's Institute of Technology Ladkrabang (KMITL)
+                        </h4>
+                        <p class="timeline-description">
+                            Currently pursuing a degree in Computer Science with a strong focus on software engineering, full-stack development, and IoT integration. Developing practical skills in backend architecture using Python (FastAPI) and real-time systems. Actively engaging in technical challenges and university events, such as the GeoAI Hackathon, to apply theoretical knowledge to real-world technological solutions.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Software Engineering</span>
+                            <span class="tag">Full-Stack</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">GeoAI Hackathon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <span class="timeline-date">
+                                <i class="far fa-calendar-alt"></i>
+                                2019 — 2024
+                            </span>
+                            <span class="timeline-status completed">Graduated</span>
+                        </div>
+                        <h3 class="timeline-title">Science, Mathematics & Technology Program — Computer Science Focus</h3>
+                        <h4 class="timeline-institution">
+                            <i class="fas fa-building-columns"></i>
+                            Ratthanakosinsomphod Bangkhunthian School
+                        </h4>
+                        <p class="timeline-description">
+                            Completed a specialized curriculum focusing on advanced mathematics, science, and technology. Majored in Computer Science, where I built a strong foundation in programming logic, problem-solving, and foundational IT skills, preparing me for my current university studies.
+                        </p>
+                        <div class="timeline-gpa">
+                            <span class="gpa-label">GPA</span>
+                            <span class="gpa-value">3.95</span>
+                            <div class="gpa-bar">
+                                <div class="gpa-bar-fill" style="--gpa-width: 98.75%"></div>
+                            </div>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tag">Mathematics</span>
+                            <span class="tag">Computer Science</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/education&gt;</span>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;experience&gt;</span>
+                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-container">
+                <div class="experience-header reveal-up">
+                    <div class="experience-role-card">
+                        <div class="role-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="role-info">
+                            <h3 class="role-title">Freelance Full Stack & IoT Developer</h3>
+                            <p class="role-company">Fastwork & Independent Clients</p>
+                            <span class="role-period">
+                                <i class="far fa-calendar-alt"></i>
+                                2024 — Present
+                            </span>
+                        </div>
+                        <span class="role-status">Active</span>
+                    </div>
+                </div>
+
+                <div class="experience-projects">
+                    <div class="project-card reveal-up" style="--card-delay: 0.1s">
+                        <div class="project-card-glow"></div>
+                        <div class="project-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4 class="project-title">End-to-End Project Management</h4>
+                        <span class="project-tag">SA & Dev</span>
+                        <p class="project-description">
+                            Managed complete software lifecycles for external clients. Responsibilities included gathering business requirements, crafting Terms of Reference (TOR), negotiating milestone-based contracts, and designing UI mockups before implementation.
+                        </p>
+                        <div class="project-tech">
+                            <span>Requirements Gathering</span>
+                            <span>TOR</span>
+                            <span>UI/UX Design</span>
+                            <span>Project Management</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal-up" style="--card-delay: 0.2s">
+                        <div class="project-card-glow"></div>
+                        <div class="project-icon">
+                            <i class="fas fa-cash-register"></i>
+                        </div>
+                        <h4 class="project-title">Restaurant POS System</h4>
+                        <span class="project-tag">Full Stack</span>
+                        <p class="project-description">
+                            Architected and developed a full-featured Point of Sale (POS) and restaurant management system. Utilized Python (FastAPI) for a robust backend and WebSockets for real-time order processing and synchronization, demonstrating a strong grasp of inventory and data flow logic.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>WebSockets</span>
+                            <span>Real-time</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal-up" style="--card-delay: 0.3s">
+                        <div class="project-card-glow"></div>
+                        <div class="project-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h4 class="project-title">Hardware & IoT Integration</h4>
+                        <span class="project-tag">IoT</span>
+                        <p class="project-description">
+                            Engineered various monitoring solutions, such as a real-time Wind Turbine Monitoring system, utilizing ESP32 microcontrollers, I2C sensors (INA219), and custom web backends to track voltage and power efficiency.
+                        </p>
+                        <div class="project-tech">
+                            <span>ESP32</span>
+                            <span>I2C Sensors</span>
+                            <span>INA219</span>
+                            <span>Web Backend</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/experience&gt;</span>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Backend & API Development -->
+                <div class="skill-category reveal-up" style="--cat-delay: 0.1s">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="skill-category-title">Backend & API Development</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="95">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-bolt"></i> FastAPI</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="70">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-code"></i> C/C++</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="60">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-golang"></i> Go</span>
+                                <span class="skill-percent">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="55">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-node-js"></i> Node.js</span>
+                                <span class="skill-percent">55%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>RESTful APIs</span>
+                        <span>WebSockets</span>
+                        <span>System Design</span>
+                    </div>
+                </div>
+
+                <!-- Frontend & UI/UX -->
+                <div class="skill-category reveal-up" style="--cat-delay: 0.2s">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="skill-category-title">Frontend & UI/UX</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="80">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-html5"></i> HTML</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="75">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="75">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-js-square"></i> JavaScript</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="45">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-vuejs"></i> Vue.js</span>
+                                <span class="skill-percent">45%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>UI/UX Mockup</span>
+                        <span>Wireframing</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Database & Data Management -->
+                <div class="skill-category reveal-up" style="--cat-delay: 0.3s">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-category-title">Database & Data Management</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-database"></i> SQL</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-elephant"></i> PostgreSQL</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="70">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-leaf"></i> MongoDB</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Google Apps Script</span>
+                        <span>Google Sheets API</span>
+                        <span>Data Pipeline</span>
+                    </div>
+                </div>
+
+                <!-- Hardware, IoT & AI -->
+                <div class="skill-category reveal-up" style="--cat-delay: 0.4s">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="skill-category-title">Hardware, IoT & AI</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-microchip"></i> ESP32</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="75">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-robot"></i> Arduino</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="65">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-brain"></i> LLM Integration</span>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--skill-width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Raspberry Pi</span>
+                        <span>I2C / I2S</span>
+                        <span>Prompt Engineering</span>
+                    </div>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/skills&gt;</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Let's build something amazing together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-cards reveal-up">
+                    <a href="mailto:niabbiekunbgxd@gmail.com" class="contact-card" id="contact-email">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>niabbiekunbgxd@gmail.com</p>
+                        <span class="contact-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="tel:+66826762376" class="contact-card" id="contact-phone">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p>+66 82 676 2376</p>
+                        <span class="contact-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="https://github.com/NiabKungg" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-github">
+                        <div class="contact-card-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h4>GitHub</h4>
+                        <p>github.com/NiabKungg</p>
+                        <span class="contact-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+                <div class="contact-form-wrapper reveal-up">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <div class="form-field">
+                                <input type="text" id="form-name" name="name" required placeholder=" ">
+                                <label for="form-name">Your Name</label>
+                                <div class="form-line"></div>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="form-email" name="email" required placeholder=" ">
+                                <label for="form-email">Your Email</label>
+                                <div class="form-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" id="form-subject" name="subject" required placeholder=" ">
+                            <label for="form-subject">Subject</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-field">
+                            <textarea id="form-message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="form-message">Your Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit" id="form-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/contact&gt;</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Ekanat Meedech</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/NiabKungg" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:niabbiekunbgxd@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+66826762376" class="social-link" aria-label="Phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+                <p class="footer-copyright">
+                    &copy; 2026 Ekanat Meedech. Built with <span class="heart">&hearts;</span> and code.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
