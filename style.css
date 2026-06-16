@@ -491,6 +491,11 @@ img {
     display: inline-block;
 }
 
+.name-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .name-letter {
     display: inline-block;
     background: var(--gradient-primary);
@@ -847,6 +852,8 @@ img {
     font-family: var(--font-mono);
     font-size: 0.85rem;
     line-height: 2;
+    overflow-x: auto;
+    scrollbar-width: thin;
 }
 
 .code-line {
@@ -1890,6 +1897,17 @@ img {
         font-size: 2.2rem;
     }
 
+    .hero-role {
+        font-size: clamp(0.95rem, 4.5vw, 1.1rem);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .terminal-body {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -1932,6 +1950,10 @@ img {
         padding: 24px;
     }
 
+    .role-period {
+        justify-content: center;
+    }
+
     .role-status {
         margin-left: 0;
     }
@@ -1959,5 +1981,16 @@ img {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .timeline-gpa {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .gpa-bar {
+        width: 100%;
+        flex: none;
     }
 }
